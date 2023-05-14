@@ -5,6 +5,8 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:ui';
 import 'package:get/get.dart';
+import 'package:portfolio/src/global/model/urlbutton.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '/src/global/ui/ui_barrel.dart';
 import '/src/src_barrel.dart';
 
@@ -655,5 +657,46 @@ class _AppDropDownState extends State<AppDropDown> {
           });
           widget.onChanged(value);
         });
+  }
+}
+
+class UrlButtons extends StatelessWidget {
+  final int i;
+  const UrlButtons(
+    this.i, {
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final project = Projects.values[i];
+    List<UrlButtonModel> urlbtn = UrlButtonController.urlbutton(project);
+    final btns = List.generate(
+        urlbtn.length, (index) => button(urlbtn[index].msg, urlbtn[index].url));
+
+    return Ui.isLargeScreen(context)
+        ? Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: btns,
+          )
+        : Ui.isMediumScreen(context)
+            ? Wrap(alignment: WrapAlignment.center, children: btns)
+            : Column(
+                children: btns,
+              );
+  }
+
+  Widget button(String name, String url) {
+    return Ui.padding(
+      child: Builder(builder: (context) {
+        return SizedBox(
+            width: 200,
+            child: FilledButton(
+                onPressed: () async {
+                  await launchUrl(Uri.parse(url));
+                },
+                text: name));
+      }),
+    );
   }
 }

@@ -15,6 +15,7 @@ class ProjectWidget extends StatefulWidget {
 
 class _ProjectWidgetState extends State<ProjectWidget> {
   int i = 0;
+  final controller = ScrollController();
 
   @override
   void initState() {
@@ -52,6 +53,35 @@ class _ProjectWidgetState extends State<ProjectWidget> {
             if (!Ui.isLargeScreen(context))
               SizedText(
                   space: 32, child: AppText.thin(Projects.values[i].desc)),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24.0),
+              child: UrlButtons(i),
+            ),
+            Scrollbar(
+              controller: controller,
+              child: SingleChildScrollView(
+                controller: controller,
+                scrollDirection: Axis.horizontal,
+                padding: EdgeInsets.symmetric(vertical: 24),
+                child: Row(
+                  children: List.generate(
+                    Projects.values[i].imgs.length,
+                    (index) => Container(
+                        width: Ui.isLargeScreen(context)
+                            ? 300
+                            : Ui.isMediumScreen(context)
+                                ? 250
+                                : 200,
+                        child: AspectRatio(
+                          aspectRatio: 9 / 16,
+                          child: Image.asset(
+                            Projects.values[i].imgs[index],
+                          ),
+                        )),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
@@ -92,7 +122,7 @@ class _ProjectWidgetState extends State<ProjectWidget> {
               (Projects.values[i].no == 2)
                   ? Image.asset(Assets.ios, width: 24, height: 24)
                   : SizedBox(height: 24),
-              (Projects.values[i].no == 1 || Projects.values[i].no == 13)
+              (Projects.values[i].no == 13)
                   ? Image.asset(Assets.nodejspng, width: 24, height: 24)
                   : SizedBox(height: 24),
             ],

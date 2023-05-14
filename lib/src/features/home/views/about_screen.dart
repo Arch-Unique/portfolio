@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/global/ui/widgets/others/containers.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../global/ui/ui_barrel.dart';
 import '../../../src_barrel.dart';
@@ -38,17 +39,9 @@ class AboutScreen extends StatelessWidget {
                 Ui.boxHeight(16),
                 Row(
                   children: [
-                    Expanded(
-                        child: FilledButton(
-                      onPressed: () {},
-                      text: "View Github",
-                    )),
+                    Expanded(child: githubBtn()),
                     Ui.boxWidth(24),
-                    Expanded(
-                        child: FilledButton.white(
-                      () {},
-                      "View CV",
-                    )),
+                    Expanded(child: cvBtn()),
                   ],
                 )
               ])
@@ -69,41 +62,37 @@ class AboutScreen extends StatelessWidget {
                           ? Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                SizedBox(
-                                    width: 220,
-                                    child: FilledButton(
-                                      onPressed: () {},
-                                      text: "Github",
-                                    )),
+                                SizedBox(width: 220, child: githubBtn()),
                                 Ui.boxHeight(24),
-                                SizedBox(
-                                    width: 220,
-                                    child: FilledButton.white(
-                                      () {},
-                                      "CV",
-                                    )),
+                                SizedBox(width: 220, child: cvBtn()),
                               ],
                             )
                           : Row(
                               children: [
-                                SizedBox(
-                                    width: 220,
-                                    child: FilledButton(
-                                      onPressed: () {},
-                                      text: "Github",
-                                    )),
+                                SizedBox(width: 220, child: githubBtn()),
                                 Ui.boxWidth(24),
-                                SizedBox(
-                                    width: 220,
-                                    child: FilledButton.white(
-                                      () {},
-                                      "CV",
-                                    )),
+                                SizedBox(width: 220, child: cvBtn()),
                               ],
                             )
                     ],
                   )),
                 ],
               ));
+  }
+
+  FilledButton githubBtn() {
+    return FilledButton(
+      onPressed: () async {
+        await launchUrl(Uri.parse("https://github.com/Arch-Unique"));
+      },
+      text: "View Github",
+    );
+  }
+
+  Widget cvBtn() {
+    return FilledButton.white(
+      () {},
+      "CV",
+    );
   }
 }

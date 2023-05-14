@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/global/ui/widgets/others/containers.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'dart:math' as math;
 import '../../../global/ui/ui_barrel.dart';
 import '../../../src_barrel.dart';
@@ -33,10 +34,7 @@ class FirstScreen extends StatelessWidget {
                     AppText.medium(
                         "A mobile app developer for Android and iOS with a knack for backend development, sprinkled with a bit of embedded systems and blockchain."),
                     Ui.boxHeight(16),
-                    FilledButton(
-                      onPressed: () {},
-                      text: "Whatsapp",
-                    ),
+                    contactBtn()
                   ],
                 )
               ])
@@ -56,15 +54,21 @@ class FirstScreen extends StatelessWidget {
                       Ui.boxHeight(16),
                       SizedBox(
                         width: 220,
-                        child: FilledButton(
-                          onPressed: () {},
-                          text: "Whatsapp",
-                        ),
+                        child: contactBtn(),
                       )
                     ],
                   )),
                   Expanded(child: Container())
                 ],
               ));
+  }
+
+  FilledButton contactBtn() {
+    return FilledButton(
+      onPressed: () async {
+        await launchUrl(Uri(scheme: "tel", path: "07067224646"));
+      },
+      text: "Whatsapp",
+    );
   }
 }

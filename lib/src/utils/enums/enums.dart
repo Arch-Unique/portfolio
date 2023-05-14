@@ -45,27 +45,109 @@ enum Service {
 }
 
 enum Projects {
-  udrive("Udrive Logistics", Assets.udrive, 2,
+  udrive(
+      "Udrive Logistics",
+      Assets.udrive,
+      2,
+      [
+        Assets.udr1,
+        Assets.udr2,
+        Assets.udr3,
+        Assets.udr4,
+        Assets.udr5,
+        Assets.udr6,
+        Assets.udr7,
+        Assets.udr8
+      ],
+      [
+        "https://archyuniq.xyz/udrive.apk",
+        "https://archyuniq.xyz/udriver.apk",
+        "https://testflight.apple.com/join/5Dg2Q5lt",
+        "https://testflight.apple.com/join/NPdRNVlO"
+      ],
       "Udrive logistics is a company that offers comprehensive logistic services through its two apps, one for drivers and the other for riders. The apps provide an extensive range of services such as delivery, errand and ride services, and wallet payments. With Google Maps integration, users can easily track their rides and deliveries. The chat features and notifications ensure timely communication and updates. The apps also offer easy sign-in through Google and Apple credentials. Udrive logistics' referral system rewards customers for bringing new users to the platform. Additionally, the company provides customer care support to ensure a seamless experience for its users."),
-  places("Find Places", Assets.places, 2,
+  places(
+      "Find Places",
+      Assets.places,
+      2,
+      [Assets.places1, Assets.places2, Assets.places3, Assets.places4],
+      [
+        "https://play.google.com/store/apps/details?id=co.findplaces.places",
+        "https://apps.apple.com/us/app/find-places/id1643865740"
+      ],
       "FindPlaces is a social networking app that uses Google Maps to help users discover new friends. By displaying heat maps of popular locations on the map, users can easily find places where people frequently gather and meet like-minded individuals. The app features Apple Sign and Google Sign for easy onboarding, chat functionality for communication with other users, event creation tools, and the ability to upload and share short videos. With FindPlaces, users can connect with others who share their interests and expand their social circle in a fun and interactive way."),
-  swiftvote("SwiftVote", Assets.swiftvote, 2,
+  swiftvote(
+      "SwiftVote",
+      Assets.swiftvote,
+      2,
+      [Assets.swi1, Assets.swi2, Assets.swi3, Assets.swi4],
+      ["https://github.com/swiftvote-group"],
       "Swiftvote is an innovative app that offers a new service to the world, Election as a Service. With its cutting-edge blockchain technology, it ensures secure and transparent elections. Currently, it is available for schools, but the company plans to expand its services to organizations and countries. Swiftvote also offers SwiftEd, an educational platform to inform users about election processes and procedures. Additionally, Swiftpoll enables users to take polls on various topics. With its user-friendly interface and advanced security measures, Swiftvote is revolutionizing the election process."),
-  sobaz("Sobaz Oil Group", Assets.sobaz, 13,
+  sobaz(
+      "Sobaz Oil Group",
+      Assets.sobaz,
+      13,
+      [
+        Assets.sob1,
+        Assets.sob2,
+        Assets.sob3,
+        Assets.sob4,
+        Assets.sob5,
+        Assets.sob6,
+        Assets.sob7,
+        Assets.sob8
+      ],
+      [
+        "https://archyuniq.xyz/sobazvf.apk",
+        "https://archyuniq.xyz/sobazadmin.apk",
+        "http://sobazgroup.archyuniq.xyz/"
+      ],
       "Sobaz Oil Group offers two mobile apps, one for admin and the other for staffs and customers, which enable efficient management of oil deliveries. The app allows admin to calculate ullages and send them to customers, who then verify and send the details back to the admin. Customers receive timely delivery updates through emails, while the admin has access to the history of deliveries, truck charts, and members. The backend system ensures the protection of the different user roles and their data."),
-  jimusic("JI Music Player", Assets.jimusic, 1,
+  jimusic(
+      "JI Music Player",
+      Assets.jimusic,
+      1,
+      [Assets.jim1, Assets.jim2, Assets.jim3, Assets.jim4],
+      [
+        "https://play.google.com/store/apps/details?id=com.silhotech.jimusicplayer"
+      ],
       "JI Music Player is a sleek and user-friendly music player app that allows you to play music from your local device. It features various sorting options such as folders, artists, albums, and songs for easy navigation. Additionally, the app comes with playlist, favorites, and most played features, allowing you to manage your music library efficiently. It also has a dark and light mode to suit your preference, and a beautiful now playing screen to enhance your music listening experience"),
-  kinesis("AIRVAC", Assets.kinesis, 13,
+  kinesis(
+      "AIRVAC",
+      Assets.kinesis,
+      13,
+      [],
+      [
+        "https://archyuniq.xyz",
+        "https://github.com/Arch-Unique/Kinesis-Arduino"
+      ],
       "Kinesis is an innovative company that has developed AIRVAC, an Automated Indoor Robot Vacuum Cleaner engineering solution. This state-of-the-art product was built using high-end technology, including the esp32 microcontroller, mpu6050 for direction, ultrasonic and obstacle avoidance sensors for obstacle detection, and a powerful 12v rechargeable battery for power. With features like spot cleaning, no zone cleaning, and full room cleaning, AIRVAC ensures maximum cleaning efficiency. Additionally, the product comes with a user-friendly app that connects to it via Wi-Fi, making it easy to control and monitor the cleaning operations. AIRVAC is an excellent choice for anyone who wants a hassle-free cleaning experience."),
-  taams("TAAMS", Assets.taams, 13,
+  taams(
+      "TAAMS",
+      Assets.taams,
+      13,
+      [Assets.taams1, Assets.taams2, Assets.taams3, Assets.taams4],
+      [
+        "https://play.google.com/store/apps/details?id=com.tetfund.taams",
+        "https://taams.com.ng"
+      ],
       "TAAMS (TetFund Assisted Attendance Management System) is an innovative Attendance Management System that is designed to help schools and universities take attendance with ease. The system comprises of an app, an admin panel, and a backend that work together seamlessly to ensure that attendance taking is a breeze. With the use of LoRa Technology, TAAMS eliminates the need for costly wifi and makes it possible for attendance to be taken over long distances. The admin panel provides school administrators with the ability to view users, schools, attendances, courses, students, and staff, while the app allows students, lecturers, and guardians to take attendance easily and conveniently. With TAAMS, attendance taking is now more accurate, efficient, and cost-effective."),
-  gpslogger("GPS Logger", Assets.gpslogger, 1,
+  gpslogger(
+      "GPS Logger",
+      Assets.gpslogger,
+      13,
+      [Assets.gps1, Assets.gps2, Assets.gps3, Assets.gps4],
+      [
+        "https://play.google.com/store/apps/details?id=com.tetfund.gps_logger",
+        "https://github.com/Arch-Unique/GPS-logger/tree/kalmanfilte"
+      ],
       "GPS Logger is a mobile app that tracks and logs the current location of a user. It sends the location data via Bluetooth to an ESP32 device for storage. This app was developed as an Internet of Things (IoT) solution for research purposes during the design process of TAAMS (Tetfund Assisted Attendance Management System). It helps in keeping track of the user's location and can be useful for a variety of purposes including safety, research, and personal tracking.");
 
   final String name, icon, desc;
-  // final List<String> url;
+  final List<String> urls, imgs;
   final int no;
-  const Projects(this.name, this.icon, this.no, this.desc);
+  const Projects(
+      this.name, this.icon, this.no, this.imgs, this.urls, this.desc);
 }
 
 enum Skills {
