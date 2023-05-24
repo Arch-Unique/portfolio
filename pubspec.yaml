@@ -45,6 +45,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   three_dart: ^0.0.16
   url_launcher: ^6.1.11
+  web_smooth_scroll: ^1.1.0
+  icons_plus: ^3.0.0
 
 dev_dependencies:
   flutter_test:

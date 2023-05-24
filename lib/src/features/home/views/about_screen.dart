@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/src/global/ui/widgets/others/containers.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -85,6 +86,7 @@ class AboutScreen extends StatelessWidget {
       onPressed: () async {
         await launchUrl(Uri.parse("https://github.com/Arch-Unique"));
       },
+      icon: LineAwesome.github,
       text: "View Github",
     );
   }

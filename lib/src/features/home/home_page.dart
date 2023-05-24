@@ -10,6 +10,7 @@ import 'package:portfolio/src/global/controller/app_controller.dart';
 import 'package:portfolio/src/global/ui/widgets/appbar/footer.dart';
 import 'package:portfolio/src/global/ui/widgets/others/containers.dart';
 import 'package:portfolio/src/src_barrel.dart';
+import 'package:web_smooth_scroll/web_smooth_scroll.dart';
 
 import '../../global/ui/ui_barrel.dart';
 import 'views/about_screen.dart';
@@ -46,25 +47,25 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: HomeMenu(),
         body: Column(
-      children: [
-        HeaderWidget(),
-        Expanded(
-            child: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          controller: controller.scrollController,
-          child: Column(
-            children: [
-              FirstScreen(offsetBottom: offsetBottom),
-              AboutScreen(offsetBottom: offsetBottom),
-              ServiceScreen(offsetBottom: offsetBottom),
-              SkillScreen(offsetBottom: offsetBottom),
-              ProjectScreen(),
-              FooterWidget()
-            ],
-          ),
-        ))
-      ],
-    ));
+          children: [
+            HeaderWidget(),
+            Expanded(
+                child: SingleChildScrollView(
+              controller: controller.scrollController,
+              child: Column(
+                children: [
+                  FirstScreen(offsetBottom: offsetBottom),
+                  AboutScreen(offsetBottom: offsetBottom),
+                  ServiceScreen(offsetBottom: offsetBottom),
+                  SkillScreen(offsetBottom: offsetBottom),
+                  ProjectScreen(),
+                  FooterWidget()
+                ],
+              ),
+            ))
+          ],
+        ));
   }
 }

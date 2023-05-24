@@ -6,7 +6,8 @@ import '/src/global/ui/ui_barrel.dart';
 class FilledButton extends StatelessWidget {
   final Function? onPressed;
   final Widget? child;
-  final String? text, icon;
+  final String? text;
+  final IconData? icon;
   final Color color, borderColor;
   final bool isCircle, isWide, hasBorder;
 
@@ -51,44 +52,41 @@ class FilledButton extends StatelessWidget {
                   disabled = false;
                 });
               },
-        child: isCircle
-            ? Container(
-                padding: const EdgeInsets.all(16),
-                child:
-                    SizedBox(height: 28, width: 28, child: Image.asset(icon!)),
-              )
-            : Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 14,
-                ),
-                width: isWide ? double.maxFinite : (Get.width / 2) - 36,
-                child: Center(
-                  child: !disabled
-                      ? child ??
-                          AppText.button(
-                            text!,
-                            color: hasBorder
-                                ? borderColor
-                                : color == AppColors.white
-                                    ? AppColors.primaryColor
-                                    : AppColors.white,
-                          )
-                      : const LoadingIndicator(),
-                )),
+        child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 14,
+            ),
+            width: isWide ? double.maxFinite : (Get.width / 2) - 36,
+            child: Center(
+              child: !disabled
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        if (icon != null)
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Icon(
+                              icon,
+                              color: color == AppColors.white
+                                  ? AppColors.primaryColor
+                                  : AppColors.white,
+                            ),
+                          ),
+                        child ??
+                            AppText.button(
+                              text!,
+                              color: hasBorder
+                                  ? borderColor
+                                  : color == AppColors.white
+                                      ? AppColors.primaryColor
+                                      : AppColors.white,
+                            ),
+                      ],
+                    )
+                  : const LoadingIndicator(),
+            )),
       );
     });
-  }
-
-  static social(
-    VoidCallback onPressed,
-    String icon,
-  ) {
-    return FilledButton(
-      onPressed: onPressed,
-      icon: icon,
-      color: AppColors.white,
-      isCircle: true,
-    );
   }
 
   static half(

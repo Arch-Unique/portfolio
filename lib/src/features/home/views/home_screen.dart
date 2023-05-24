@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:portfolio/src/global/ui/widgets/others/containers.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:math' as math;
@@ -66,8 +67,9 @@ class FirstScreen extends StatelessWidget {
   FilledButton contactBtn() {
     return FilledButton(
       onPressed: () async {
-        await launchUrl(Uri(scheme: "tel", path: "07067224646"));
+        await launchUrl(Uri.parse("https://wa.link/3zhnl0"));
       },
+      icon: LineAwesome.whatsapp,
       text: "Whatsapp",
     );
   }

@@ -32,11 +32,11 @@ class MyApp extends StatelessWidget {
         fontFamily: Assets.appFontFamily,
         scaffoldBackgroundColor: AppColors.primaryColorBackground,
       ),
-      initialRoute: '/home',
+      initialRoute: '/',
       unknownRoute: GetPage(name: "/404", page: () => Error404Widget()),
       getPages: [
         GetPage(
-          name: "/home",
+          name: "/",
           page: () => HomeScreen(),
         ),
         GetPage(
